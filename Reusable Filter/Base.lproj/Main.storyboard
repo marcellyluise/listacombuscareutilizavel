@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o69-Gp-mTs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Reusable_Filter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="nI5-Xa-UFy">
+                                <rect key="frame" x="149" y="369" width="116" height="158"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDM-tw-vX5">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="30"/>
+                                        <state key="normal" title="Filtra Bancos"/>
+                                        <connections>
+                                            <action selector="filtraBancos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qgT-ph-0Yj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfG-el-ONy">
+                                        <rect key="frame" x="0.0" y="54" width="116" height="30"/>
+                                        <state key="normal" title="Filtra Ocupações"/>
+                                        <connections>
+                                            <action selector="filtraOcupacoes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6kw-e2-BjF"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kha-4A-nQT">
+                                        <rect key="frame" x="0.0" y="108" width="116" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nI5-Xa-UFy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KPe-01-YlS"/>
+                            <constraint firstItem="nI5-Xa-UFy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ToS-Sy-dt8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rbn-Om-Fhw"/>
+                    <connections>
+                        <outlet property="label" destination="kha-4A-nQT" id="Gf2-7T-rfu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863.768115942029" y="72.991071428571431"/>
+        </scene>
+        <!--Filtro View Controller-->
+        <scene sceneID="p6d-jh-Ypo">
+            <objects>
+                <viewController storyboardIdentifier="FiltroViewController" id="zlJ-8E-9YM" customClass="FiltroViewController" customModule="Reusable_Filter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SkL-74-DXK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RW6-Fe-M8C">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zlJ-8E-9YM" id="RsV-Jd-Ya8"/>
+                                    <outlet property="delegate" destination="zlJ-8E-9YM" id="jaN-oT-586"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qN3-o3-YWY" firstAttribute="trailing" secondItem="RW6-Fe-M8C" secondAttribute="trailing" id="BOA-aw-Rb9"/>
+                            <constraint firstItem="qN3-o3-YWY" firstAttribute="bottom" secondItem="RW6-Fe-M8C" secondAttribute="bottom" id="qQs-U8-v4f"/>
+                            <constraint firstItem="RW6-Fe-M8C" firstAttribute="top" secondItem="qN3-o3-YWY" secondAttribute="top" id="t0s-c7-h1r"/>
+                            <constraint firstItem="RW6-Fe-M8C" firstAttribute="leading" secondItem="qN3-o3-YWY" secondAttribute="leading" id="zOJ-Bc-Vhc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qN3-o3-YWY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="RW6-Fe-M8C" id="yh4-33-wTC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5P2-DA-oSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1686" y="73"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ziW-Db-YpU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o69-Gp-mTs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aw3-6Y-VKH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vcP-Nk-gSi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAq-qd-luk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46.376811594202906" y="72.991071428571431"/>
+        </scene>
+    </scenes>
+</document>
